@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "AI Flashcard to Anki",
+  "version": "0.1.0",
+  "description": "Create Anki flashcards from highlighted text using an AI model and AnkiConnect",
+  "permissions": ["contextMenus", "scripting", "activeTab", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Create Flashcard"
+  },
+  "host_permissions": [
+    "http://localhost/*",
+    "http://127.0.0.1/*",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "48": "icon48.png"
+  }
+}

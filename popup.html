@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>AI → Anki</title>
+    <style>
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial; padding: 12px; width: 560px; }
+      textarea { width: 100%; box-sizing: border-box; margin-bottom: 8px; }
+      button { margin-right: 8px; }
+      label { font-weight: 600; }
+      .small { font-size: 0.9em; color: #555 }
+    </style>
+  </head>
+  <body>
+    <h2>AI Flashcard → Anki</h2>
+
+    <div>
+      <label>Selected text</label>
+      <textarea id="selected" rows="4" placeholder="Select text on a page and use the context menu"> </textarea>
+    </div>
+
+    <div>
+      <label>Front (question/prompt)</label>
+      <textarea id="front" rows="3"></textarea>
+    </div>
+
+    <div>
+      <label>Back (answer)</label>
+      <textarea id="back" rows="6"></textarea>
+    </div>
+
+    <div style="margin-top:8px">
+      <!-- <button id="generate">Generate with AI</button> -->
+      <button id="add">Add to Anki</button>
+      <!-- <label style="margin-left:8px"><input type="checkbox" id="directAdd" /> Add directly to Anki (no backend)</label> -->
+      <span class="small">Deck: <input id="deck" value="Default" style="width:120px" /></span>
+    </div>
+
+    <hr />
+    <div style="margin-top:6px">
+      <!-- <input id="apiKey" type="password" placeholder="Paste your API key for testing" style="width:100%" /> -->
+      <!-- <div class="small">Warning: placing an API key inside an extension exposes it to users who install it. Prefer providing your own key only for personal testing.</div> -->
+      <!-- <button id="saveKey">Save key</button> -->
+    </div>
+
+    <div id="status" class="small" style="margin-top:10px"></div>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
